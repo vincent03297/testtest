@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Running Dashboard</title>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <style>
+      /* Google Fonts에서 Pretendard 가져오기 */
+      @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+      body {
+        background-color: #121212; /* 다크 모드 배경 */
+        color: #e0e0e0; /* 기본 텍스트 색상 */
+        font-family: "Pretendard", sans-serif;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        width: 90vw;
+        height: 90vh;
+      }
+      .chart-container {
+        background-color: #1e1e1e; /* 차트 배경 */
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .title {
+        font-size: 30px;
+        color: #e0e0e0;
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      #total-distance {
+        font-size: 100px;
+        font-weight: bold;
+        color: #1629a1;
+        text-align: center;
+      }
+      .chart {
+        width: 100%;
+        height: 80%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Total Runny Day! -->
+      <div class="chart-container">
+        <div class="title">Total Runny Day!</div>
+        <div id="total-distance">17.20 km</div>
+      </div>
+
+      <!-- History of Runny Day -->
+      <div class="chart-container">
+        <div class="title">History of Runny Day!</div>
+        <div id="daily-bar-chart" class="chart"></div>
+      </div>
+
+      <!-- Goal of Month -->
+      <div class="chart-container">
+        <div class="title">Goal of Month!</div>
+        <div id="goal-radar-chart" class="chart"></div>
+      </div>
+
+      <!-- Avg -->
+      <div class="chart-container">
+        <div class="title">Average</div>
+        <div id="average-stats" class="chart"></div>
+      </div>
+    </div>
+
+    <script>
+      // 1. Distance of This Runny Day!
+      document.getElementById("total-distance").innerText = "17.20 km";
+
+      // 2. History of Runny Day!
+      Highcharts.chart("daily-bar-chart", {
+        chart: {
+          type: "column",
+          backgroundColor: "#1e1e1e",
+        },
+        title: { text: null },
+        xAxis: {
+          categories: [
+            "10.09",
+            "10.11",
+            "10.16",
+            "10.18",
+            "10.19",
+            "10.21",
+            "10.24",
+          ],
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        yAxis: {
+          title: { text: "Distance (km)", style: { color: "#e0e0e0" } },
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        series: [
+          {
+            name: "Distance",
+            data: [1.79, 2, 2.38, 2.19, 3.01, 2.77, 3.04],
+            color: "#061052",
+          },
+        ],
+        legend: { itemStyle: { color: "#e0e0e0" } },
+      });
+
+      // 3. Goal of Month!
+      Highcharts.chart("goal-radar-chart", {
+        chart: {
+          polar: true,
+          type: "line",
+          backgroundColor: "#1e1e1e",
+        },
+        title: { text: null },
+        pane: { size: "80%" },
+        xAxis: {
+          categories: ["Distance", "Time", "Pace", "Consistancy"],
+          tickmarkPlacement: "on",
+          lineWidth: 0,
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        yAxis: {
+          gridLineInterpolation: "polygon",
+          lineWidth: 0,
+          min: 0,
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        series: [
+          {
+            name: "Percentage of Goals",
+            data: [80, 70, 90, 75],
+            color: "#1629a1",
+            fillOpacity: 0.3,
+          },
+        ],
+        legend: { itemStyle: { color: "#e0e0e0" } },
+      });
+
+      // 4. Avg
+      Highcharts.chart("average-stats", {
+        chart: {
+          type: "column",
+          backgroundColor: "#1e1e1e",
+        },
+        title: { text: null },
+        xAxis: {
+          categories: ["Distance", "Time", "Pace", "Consistancy"],
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        yAxis: {
+          title: { text: null },
+          labels: { style: { color: "#e0e0e0" } },
+        },
+        series: [
+          {
+            name: "Avg",
+            data: [5.5, 6.0, 18.5, 7.0],
+            color: "#061052",
+          },
+        ],
+        legend: { itemStyle: { color: "#e0e0e0" } },
+      });
+    </script>
+  </body>
+</html>

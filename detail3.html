@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Momorable Times</h1>
+    </header>
+    <main class="gallery">
+        <!-- 사진 목록 -->
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="Image/1.jpeg" alt="Photo 1" data-comment="Health breakfast." data-date="2024-09-25">
+            </div>
+            <div class="photo-item">
+                <img src="Image/cook5.jpg" alt="Photo 2" data-comment="Really greatful pics" data-date="2024-10-17">
+            </div>
+            <div class="photo-item">
+                <img src="Image/3.jpeg" alt="Photo 3" data-comment="Do you like yellow?." data-date="2024-10-19">
+            </div>
+            <div class="photo-item">
+                <img src="Image/4.jpeg" alt="Photo 4" data-comment="Night time meal." data-date="2024-11-19">
+            </div>
+            <div class="photo-item">
+                <img src="Image/5.jpeg" alt="Photo 5" data-comment="When I was work in kitchen." data-date="2024-11-23">
+            </div>
+            <div class="photo-item">
+                <img src="Image/cook1.JPG" alt="Photo 6" data-comment="Fantastic rice dish." data-date="2024-11-24">
+            </div>
+            <div class="photo-item">
+                <img src="Image/cook2.JPG" alt="Photo 7" data-comment="I love lemon." data-date="2024-12-05">
+            </div>
+            <div class="photo-item">
+                <img src="Image/2.jpeg" alt="Photo 8" data-comment="Most delicious black noodles." data-date="2024-12-07">
+            </div>
+            <div class="photo-item">
+                <img src="Image/cook3.JPG" alt="Photo 9" data-comment="Cute and yummy things" data-date="2024-12-12">
+            </div>
+            <div class="photo-item">
+                <img src="Image/7.jpeg" alt="Photo 10" data-comment="When I was work in kitchen2" data-date="2024-12-12">
+            </div>
+            <div class="photo-item">
+                <img src="Image/8.jpeg" alt="Photo 11" data-comment="Healthly and yummy" data-date="2024-12-13">
+            </div>
+            <!-- 더 많은 사진 추가 가능 -->
+        </div>
+
+        <!-- 사진 확대 및 정보 표시 -->
+        <div class="photo-modal hidden" id="photo-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <img src="" alt="Expanded Photo" id="modal-photo">
+                <p id="photo-comment">Comment will appear here.</p>
+                <p id="photo-date">Date will appear here.</p>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Momorable Times</h1>
+    </header>
+    <main class="gallery">
+        <!-- 사진 목록 -->
+        <div class="photo-grid">
+            <div class="photo-item">
+                <img src="Image/hangout2.JPG" alt="Photo 1" data-comment="Wow." data-date="2024-08-15">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout3.jpeg" alt="Photo 2" data-comment="I'm a passionate student." data-date="2024-09-17">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout4.JPG" alt="Photo 3" data-comment="Like a vintage film." data-date="2024-10-19">
+            </div>
+            <div class="photo-item">
+                <img src="Image/me and minjun.PNG" alt="Photo 4" data-comment="Drunken Minjun and I." data-date="2024-10-23">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout5.JPG" alt="Photo 5" data-comment="You can't stop to eat." data-date="2024-10-30">
+            </div>
+            <div class="photo-item">
+                <img src="Image/uchul.PNG" alt="Photo 6" data-comment="Happy U-Chul." data-date="2024-11-24">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout7.jpeg" alt="Photo 7" data-comment="Let's go." data-date="2024-11-29">
+            </div>
+            <div class="photo-item">
+                <img src="Image/fire.JPG" alt="Photo 8" data-comment="Like a bully kid." data-date="2024-11-30">
+            </div>
+            <div class="photo-item">
+                <img src="Image/me3.JPG" alt="Photo 9" data-comment="Smile, smile." data-date="2024-12-01">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout9.jpeg" alt="Photo 10" data-comment="Posty, I love you." data-date="2023-09-23">
+            </div>
+            <div class="photo-item">
+                <img src="Image/minjun.JPG" alt="Photo 11" data-comment="Happy Minjun." data-date="2024-12-13">
+            </div>
+            <div class="photo-item">
+                <img src="Image/hangout6.JPG" alt="Photo 12" data-comment="On my B-day." data-date="2024-03-29">
+            </div>
+            <div class="photo-item">
+                <img src="Image/cat10.JPG" alt="Photo 13" data-comment="Plz come to me." data-date="2024-12-16">
+            </div>
+            <!-- 더 많은 사진 추가 가능 -->
+        </div>
+
+        <!-- 사진 확대 및 정보 표시 -->
+        <div class="photo-modal hidden" id="photo-modal">
+            <div class="modal-content">
+                <span class="close-btn" id="close-modal">&times;</span>
+                <img src="" alt="Expanded Photo" id="modal-photo">
+                <p id="photo-comment">Comment will appear here.</p>
+                <p id="photo-date">Date will appear here.</p>
+            </div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>
